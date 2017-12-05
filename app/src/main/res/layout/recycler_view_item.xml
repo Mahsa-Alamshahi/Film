@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_filmThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/recyclerView_items_imageView_height"
+        android:scaleType="fitXY"
+        style="@style/myImageView"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+</LinearLayout>

@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="sheypour.mobile.films.controller.FilmListFragment">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_topImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/img_filmImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/filmDetails_filmImage_height"
+
+                    android:scaleType="fitXY"
+                    app:srcCompat="@mipmap/ic_launcher" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_filmText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_filmImage"
+                    android:background="@color/filmDetails_filmInfo_backgroundColor"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/filmDetails_filmInfo_linearLayoutParent_margin">
+
+
+                    <TextView
+                        android:id="@+id/txt_filmName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/filmDetails_filmName_textView_paddingBottom"
+                        android:text="TextView"
+                        android:layout_marginTop="@dimen/filmDetails_filmInfo_linearLayout_marginTopBottom"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/filmDetails_filmName_textColor" />
+
+                    <TextView
+                        android:id="@+id/txt_filmTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:layout_marginBottom="@dimen/filmDetails_filmInfo_linearLayout_marginTopBottom"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/filmDetails_filmInfo_textColor" />
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="@dimen/filmDetails_playImageView_widthHeight"
+                    android:layout_height="@dimen/filmDetails_playImageView_widthHeight"
+                    android:layout_above="@+id/ll_filmText"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/filmDetails_playImageView_marginBottom"
+                    android:layout_marginRight="@dimen/filmDetails_playImageView_marginRight"
+                    android:src="@mipmap/ic_play" />
+
+
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/filmDetails_filmSummary_backgroundColor"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="@dimen/filmDetails_infoImageView_widthHeight"
+                    android:layout_height="@dimen/filmDetails_infoImageView_widthHeight"
+                    android:layout_marginLeft="@dimen/filmDetails_infoImageView_marginLeft"
+                    android:layout_marginTop="@dimen/filmDetails_infoImageView_marginTop"
+                    android:src="@mipmap/ic_info" />
+
+
+                <TextView
+                    android:id="@+id/txt_filmSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/filmDetails_filmSummaryTextView_padding"
+                    android:text="TextView"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/filmDetails_filmSummary_textColor" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="@dimen/filmDetails_backImageView_widthHeight"
+        android:layout_height="@dimen/filmDetails_backImageView_widthHeight"
+        android:scaleType="center"
+        android:layout_marginTop="16dp"
+        android:padding="24dp"
+        android:src="@drawable/ic_arrow_back_black_24dp" />
+
+
+
+</RelativeLayout>

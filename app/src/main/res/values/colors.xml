@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="toolbarBackground">#1977d0</color>
+    <color name="toolbarSearchIconColor">#cce6f9</color>
+
+    <color name="filmDetails_filmInfo_backgroundColor">#5f767e</color>
+    <color name="filmDetails_filmInfo_textColor">#bbced4</color>
+    <color name="filmDetails_filmName_textColor">#FFFFFF</color>
+    <color name="filmDetails_filmSummary_backgroundColor">#000000</color>
+    <color name="filmDetails_filmSummary_textColor">#FFFFFF</color>
+    <color name="mainActivity_toolbar_textColor">#FFFFFF</color>
+
+    <color name="image_border_start">#FF000000</color>
+    <color name="image_border_end">#FF000000</color>
+    <color name="image_border_center">#000000</color>
+</resources>

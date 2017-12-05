@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="mainActivity_toolbar_padding">16dp</dimen>
+    <dimen name="recyclerView_items_imageView_height">256dp</dimen>
+
+    <dimen name="filmDetails_filmImage_height">320dp</dimen>
+    <dimen name="filmDetails_filmImage_paddingTop">28dp</dimen>
+
+    <dimen name="filmDetails_filmName_textView_paddingBottom">8dp</dimen>
+
+    <dimen name="filmDetails_filmInfo_linearLayout_height">100dp</dimen>
+    <dimen name="filmDetails_infoImageView_widthHeight">32dp</dimen>
+    <dimen name="filmDetails_infoImageView_marginTop">32dp</dimen>
+    <dimen name="filmDetails_infoImageView_marginLeft">16dp</dimen>
+    <dimen name="filmDetails_filmInfo_linearLayoutParent_margin">72dp</dimen>
+
+    <dimen name="filmDetails_playImageView_widthHeight">50dp</dimen>
+    <dimen name="filmDetails_playImageView_marginBottom">-25dp</dimen>
+    <dimen name="filmDetails_playImageView_marginRight">20dp</dimen>
+
+    <dimen name="filmDetails_filmSummaryTextView_padding">24dp</dimen>
+    <dimen name="filmDetails_filmInfo_linearLayout_marginTopBottom">24dp</dimen>
+    <dimen name="filmDetails_backImageView_widthHeight">50dp</dimen>
+
+</resources>
