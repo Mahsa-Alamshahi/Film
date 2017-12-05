@@ -110,7 +110,7 @@ public class FilmListFragment extends Fragment implements View.OnClickListener {
                     } else {
                         mProgressBar.setVisibility(View.GONE);
                         mRetry.setVisibility(View.VISIBLE);
-                        Toast.makeText(getContext(), "An error accured.Please try again.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "An error occurred.Please try again.", Toast.LENGTH_SHORT).show();
                     }
                 }
 
