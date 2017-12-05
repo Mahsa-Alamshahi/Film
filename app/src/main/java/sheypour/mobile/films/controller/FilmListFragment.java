@@ -69,9 +69,7 @@ public class FilmListFragment extends Fragment implements View.OnClickListener {
             getFilmList(0);
         }
 
-
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
-//        mFilmListRecyclerView.setHasFixedSize(true);
         mFilmListRecyclerView.setLayoutManager(layoutManager);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
