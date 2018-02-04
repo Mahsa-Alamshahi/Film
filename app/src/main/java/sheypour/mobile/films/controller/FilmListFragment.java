@@ -15,24 +15,24 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import common.App;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import sheypour.mobile.films.R;
 import sheypour.mobile.films.model.FilmListResponse;
-import sheypour.mobile.films.service.FilmWebService;
+import sheypour.mobile.films.service.IFilmsServicesInterface;
 
 
 public class FilmListFragment extends Fragment implements View.OnClickListener {
 
 
-    private View mView;
-    private IFragmentListener mIFragmentListener;
-    private RecyclerViewAdapter mRecyclerViewAdapter;
-    private ArrayList<FilmListResponse> mFilmList = new ArrayList<>();
-    private EndlessRecyclerViewScrollListener mScrollListener;
+    @Inject
+    IFilmsServicesInterface retrofit;
 
     @BindView(R.id.recyclerview_filmList)
     protected RecyclerView mFilmListRecyclerView;
@@ -42,6 +42,13 @@ public class FilmListFragment extends Fragment implements View.OnClickListener {
 
     @BindView(R.id.imgb_retry)
     protected ImageButton mRetry;
+
+    private View mView;
+    private IFragmentListener mIFragmentListener;
+    private RecyclerViewAdapter mRecyclerViewAdapter;
+    private ArrayList<FilmListResponse> mFilmList = new ArrayList<>();
+    private EndlessRecyclerViewScrollListener mScrollListener;
+
 
 
     public FilmListFragment() {
@@ -57,7 +64,14 @@ public class FilmListFragment extends Fragment implements View.OnClickListener {
 
         mView = inflater.inflate(R.layout.fragment_film_list, container, false);
 
+
+        ((App) getActivity().getApplication()).getNetComponent().inject(FilmListFragment.this);
+
+        retrofit= ((App) getActivity().getApplication()).getNetComponent().getApiService();
+
+
         ButterKnife.bind(this, mView);
+
 
         mProgressBar.setVisibility(View.GONE);
         mRecyclerViewAdapter = new RecyclerViewAdapter(getContext(), mFilmList, mIFragmentListener);
@@ -89,21 +103,23 @@ public class FilmListFragment extends Fragment implements View.OnClickListener {
 
 
     private void getFilmList(int page) {
+
         mProgressBar.setVisibility(View.VISIBLE);
+
         try {
 
-            Call<ArrayList<FilmListResponse>> getFilmList = FilmWebService.getClient().filmList();
+            Call<ArrayList<FilmListResponse>> getFilmList = retrofit.filmList();
 
             getFilmList.enqueue(new Callback<ArrayList<FilmListResponse>>() {
                 @Override
                 public void onResponse(Call<ArrayList<FilmListResponse>> call, Response<ArrayList<FilmListResponse>> response) {
-                    mProgressBar.setVisibility(View.GONE);
-                    if (response.isSuccessful()) {
 
+                    mProgressBar.setVisibility(View.GONE);
+
+                    if (response.isSuccessful()) {
                         mFilmList.addAll(response.body());
                         mRecyclerViewAdapter = new RecyclerViewAdapter(getContext(), mFilmList, mIFragmentListener);
                         mFilmListRecyclerView.setAdapter(mRecyclerViewAdapter);
-
                         mProgressBar.setVisibility(View.GONE);
                         mRetry.setVisibility(View.GONE);
 
@@ -118,17 +134,15 @@ public class FilmListFragment extends Fragment implements View.OnClickListener {
                 public void onFailure(Call<ArrayList<FilmListResponse>> call, Throwable t) {
                     mProgressBar.setVisibility(View.GONE);
                     mRetry.setVisibility(View.VISIBLE);
-
                 }
-            });
 
+            });
 
         } catch (Exception e) {
             e.printStackTrace();
             mProgressBar.setVisibility(View.GONE);
             mRetry.setVisibility(View.VISIBLE);
         }
-
 
     }
 

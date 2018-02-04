@@ -21,6 +21,7 @@ import sheypour.mobile.films.model.FilmListResponse;
 public class FilmDetailsFragment extends Fragment implements View.OnClickListener {
 
 
+
     private View mView;
     private IFragmentListener mIFragmentListener;
     private FilmListResponse mFilmListResponse;
@@ -42,6 +43,7 @@ public class FilmDetailsFragment extends Fragment implements View.OnClickListene
 
 
     public FilmDetailsFragment() {
+
     }
 
     public void setInterface(IFragmentListener getInterface) {
@@ -61,6 +63,7 @@ public class FilmDetailsFragment extends Fragment implements View.OnClickListene
 
         ButterKnife.bind(this, mView);
         mBackImage.setOnClickListener(this);
+
 
         Picasso
                 .with(getContext())

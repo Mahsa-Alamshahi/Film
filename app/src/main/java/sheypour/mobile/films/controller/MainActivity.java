@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements IFragmentListener
     }
 
 
+
     @Override
     public void onFilmDetails(FilmListResponse filmListResponse) {
         mToolbarLayout.setVisibility(View.GONE);
@@ -66,10 +67,12 @@ public class MainActivity extends AppCompatActivity implements IFragmentListener
     }
 
 
+
     @Override
     public void onFilmList() {
         onFilmsListFragment();
     }
+
 
 
     @Override

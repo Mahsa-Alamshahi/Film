@@ -50,14 +50,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 .load( mFilmList.get(position).getImage().getMedium())
                 .into(holder.mFilmThumbnails);
 
-
-
-//        mFilmThumbnailImageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                mFragmentListener.onFilmDetails(mFilmList.get(position));
-//            }
-//        });
     }
 
 
@@ -86,6 +78,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             }
         }
     }
-
 
 }
